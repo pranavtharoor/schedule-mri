@@ -1,4 +1,10 @@
 # Schedule MRI
+A tool used to reduce a patients waiting time for MRI scans. When an MRI scan is scheduled the time
+window given for each MRI is determined by the time taken for the normal sequence timing. This time
+provided for each scan to run usually varies due to the extra sequence taken which leads to delay in
+other schedule cases. This further involves in increased patient waiting time. Schedule MRI provides
+a web interface for the scheduling of patients' scans. It shows the MRI schedule of the day, week or
+month and allows for easy alteration of the schedule.
 
 ## Built with
 - Node
