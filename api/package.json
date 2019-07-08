@@ -1,0 +1,56 @@
+{
+  "name": "schedule-mri-api",
+  "version": "1.0.0",
+  "description": "Schedule MRI API",
+  "main": "index.js",
+  "dependencies": {
+    "@hapi/joi": "15.0.3",
+    "@hapi/joi-date": "1.3.0",
+    "body-parser": "1.19.0",
+    "change-case": "3.1.0",
+    "connect-redis": "3.4.1",
+    "dotenv": "8.0.0",
+    "express": "4.16.4",
+    "express-session": "1.16.1",
+    "morgan": "1.9.1",
+    "pg": "7.11.0",
+    "redis": "2.8.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.4.4",
+    "@babel/core": "7.0.0",
+    "@babel/node": "7.2.2",
+    "@babel/preset-env": "7.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "10.0.1",
+    "babel-jest": "24.8.0",
+    "eslint": "5.16.0",
+    "eslint-config-prettier": "4.3.0",
+    "eslint-plugin-prettier": "3.1.0",
+    "jest": "24.8.0",
+    "node-mocks-http": "1.7.6",
+    "nodemon": "1.19.0",
+    "prettier": "1.17.1",
+    "rimraf": "2.6.3",
+    "supertest": "4.0.2"
+  },
+  "scripts": {
+    "start": "nodemon --watch src --exec babel-node src/bin/www",
+    "build": "babel src --out-dir dist --copy-files",
+    "serve": "node dist/bin/www",
+    "clean": "rimraf ./dist",
+    "test": "jest ./src --color",
+    "test:watch": "jest ./src --watch --color",
+    "test:coverage": "jest ./src --coverage --color",
+    "lint": "eslint ./src --fix --color"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranavtharoor/schedule-mri.git"
+  },
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/pranavtharoor/schedule-mri/issues"
+  },
+  "homepage": "https://github.com/pranavtharoor/schedule-mri#readme"
+}

@@ -1,0 +1,70 @@
+version: '3.5'
+services:
+  api:
+    build:
+      dockerfile: ./api/Dockerfile
+      context: .
+    image: schedule-mri-api
+    restart: unless-stopped
+    networks:
+      - schedule-mri-network
+    container_name: schedule-mri-api
+    depends_on:
+      - db
+      - redis
+    environment:
+      - NODE_ENV=production
+      - NODE_PORT=3000
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - SESSION_SECRET=secret
+      - POSTGRES_DB=mri
+      - POSTGRES_HOST=db
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_PORT=5432
+  db:
+    build:
+      dockerfile: ./db/Dockerfile
+      context: .
+    image: schedule-mri-db
+    restart: unless-stopped
+    networks:
+      - schedule-mri-network
+    container_name: schedule-mri-db
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=mri
+  redis:
+    image: redis
+    container_name: schedule-mri-redis
+    restart: unless-stopped
+    networks:
+      - schedule-mri-network
+    volumes:
+      - redis-data:/data
+  web:
+    build:
+      dockerfile: ./web/Dockerfile
+      context: .
+    image: schedule-mri-web
+    restart: unless-stopped
+    networks:
+      - schedule-mri-network
+    container_name: schedule-mri-web
+    depends_on:
+      - api
+    ports:
+      - 6001:80
+
+networks:
+  schedule-mri-network:
+    driver: bridge
+    name: schedule-mri-network
+
+volumes:
+  db-data:
+  redis-data:

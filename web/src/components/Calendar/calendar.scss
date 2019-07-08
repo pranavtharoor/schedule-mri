@@ -1,0 +1,9 @@
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+@import '~@fullcalendar/timegrid/main.css';
+
+.calendar {
+  margin: 10px 0;
+  padding: 0 10px;
+  height: calc(100% - 20px);
+}

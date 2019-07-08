@@ -1,0 +1,27 @@
+#unscheduled-appointments {
+  padding: 0 12px;
+  font-weight: 400;
+  height: 100%;
+  max-height: calc(100vh - 305px);
+  overflow: auto;
+
+  .appointment {
+    background: #3788d8;
+    margin: 12px 0;
+    min-height: 30px;
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .message {
+    font-size: 0.8rem;
+    text-align: center;
+    color: #cccccc;
+    padding-bottom: 15px;
+  }
+}

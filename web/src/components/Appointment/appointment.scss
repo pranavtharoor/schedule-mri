@@ -1,0 +1,40 @@
+@import 'Src/common.scss';
+
+.appointment {
+  padding: 30px 20px;
+
+  .heading {
+    color: $color-primary;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+
+  .list-item {
+    padding: 10px;
+    display: flex;
+
+    &:nth-child(even) {
+      background: lighten($color-primary, 80%);
+    }
+
+    div:first-child {
+      min-width: 400px;
+    }
+    div:last-child {
+      font-weight: 700;
+    }
+  }
+
+  .buttons {
+    display: flex;
+
+    a,
+    div {
+      @include button;
+      display: inline-block;
+      text-decoration: none;
+      margin: 30px 20px 20px 0;
+    }
+  }
+}

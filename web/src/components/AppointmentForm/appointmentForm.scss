@@ -1,0 +1,63 @@
+@import 'Src/common.scss';
+
+.appointment-form {
+  padding-bottom: 40px;
+
+  .heading {
+    color: $color-primary;
+    padding: 30px 25px;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .columns-4 {
+    display: flex;
+
+    label {
+      width: 25%;
+    }
+  }
+
+  .columns-2 {
+    display: flex;
+    flex-wrap: wrap;
+
+    label {
+      width: 50%;
+    }
+  }
+
+  label {
+    padding: 10px 25px;
+    display: block;
+
+    .input-label {
+      padding: 5px 0;
+      font-weight: 500;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: none;
+      background: #dedede;
+      padding: 10px;
+      border-radius: 2px;
+      font-size: 0.9rem;
+    }
+
+    textarea {
+      height: 150px;
+      resize: none;
+    }
+  }
+
+  .add-button-container {
+    text-align: right;
+
+    button {
+      @include button;
+      margin: 20px 30px;
+    }
+  }
+}

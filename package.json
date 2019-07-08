@@ -1,0 +1,17 @@
+{
+  "name": "schedule-mri",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.13.1"
+  },
+  "scripts": {
+    "postinstall": "lerna bootstrap --hoist",
+    "start": "lerna run start",
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "test:watch": "lerna run test:watch",
+    "test:coverage": "lerna run test:coverage",
+    "clean": "lerna run clean",
+    "lint": "lerna run lint"
+  }
+}
